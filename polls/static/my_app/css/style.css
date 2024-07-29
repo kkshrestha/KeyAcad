@@ -1,7 +1,90 @@
-body {
-    background-color: lightblue;
-    font-family: verdana;
-  }       
-  h1{
-    color:red;
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
   }
+  body{
+     background-color: rgb(246, 246, 246);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      
+  }
+  header{
+      position: relative;
+      background-color: rgba(240, 239, 239, 0.73);
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+  }
+  .navita{
+      margin-right: 3%;
+  }
+  .navita a{
+  
+      text-decoration: none;
+      line-height: 10%;
+      padding: 10px 20px;
+      width: 80%;
+      
+  }
+  .navita a:hover{
+      box-shadow: 0px 2px 10px 5px rgba(52, 50, 50, 0.219);
+  }
+  #tut{
+    color: red;
+    font-weight: 600;
+    
+}
+#instru{
+    color:rgb(16, 198, 16);
+    font-weight: 600;
+  
+}
+#bac{
+    height: 80%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-image: url('img/second.jpg'); */
+    
+}
+#logregister{
+    margin-left: 10%;
+    
+    
+}
+#logregister a{
+    color: white;
+    padding: 0.5%;
+    margin-left:0.5% ;
+    background: linear-gradient(to right,red,blue);
+    text-decoration: none;
+}
+#getlogo{
+    height: 2%;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 20%;
+}
+#getlogo:hover{
+    transform: scale(1.2);
+}
+.btn{
+   height: 36px;
+   width: 20%; 
+   overflow: hidden;
+   cursor: pointer;
+   color: white;
+   background: linear-gradient(to left, darkblue, darkred);
+   border: none;
+   transition: transform 0.3s;
+}
+.btn:hover{
+    transform:scale(1.16);
+}
