@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'my_app/img/keyacad-xlogo1.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'my_app/css/style.css' %}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>View-Certificate</title>
+</head>
+<body>
+    <header>
+        <!-- <nav id="logregister">
+            <a href="#">LOGIN</a>
+            <a href="#">REGISTER</a>
+        </nav> -->
+        <h6>
+            <img src="{% static 'my_app/img/keyacad-logo1.png' %}"  alt="loading"id="getlogo">
+        </h6>
+        
+        <nav class="navita">
+            <a href="/index/">Home</a>
+            <a href="#"><div class="dropdown">
+                <span>All Course <i class="fa-solid fa-caret-down"></i></span>
+                <div class="dropdown-content">
+                <p href="#">Ethical Hacking Training</p>
+                <p href="#">Python Programming Course</p>
+                <p href="#">Web Development Training</p>
+                <p href="#">Advance Graphic Design Training</p>
+                <p href="#">UI/UX Training Course</p>
+                <p href="#">Hardware & Networking Course</p>
+                <p href="#">C Programming Course</p>
+                </div>
+              </div></a>
+            <a href="#">About </a>
+            <a href="#"> Tutorial</a>
+            <a href="#">Instruction To Apply</a>
+            </nav>
+    </header>
+
+<div class="viewcerti">
+
+</div>
+<div class="checkcertificate">
+<h1>Check Your Certificate with ID</h1>
+<div class="insertid">
+    <input type="text" id="studentID" name="studentID">
+    <input type="submit" value="Verify" class="Vcertifi"> </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="fcolumn">
+    <h6>
+        <img src="{% static 'my_app/img/keyacad-flogo1.png' %}" href="" alt="loading" id="fgetlogo">
+    </h6>
+    <h2 class="quick">
+        Quick Contact
+    </h2>
+    <p id="fcol">
+        <i class="fa-solid fa-square-phone"></i> 9803023776 <br><br>
+        <i class="fa-solid fa-map-location-dot"></i> Chabahil kathmandu, Nepal <br><br>
+        <i class="fa-solid fa-square-envelope"></i> Krishnakumarshresthaa@gmail. <br><br>
+        <p id="ficons">
+        <i class="fa-brands fa-square-facebook"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-square-youtube"></i><i class="fa-brands fa-square-twitter"></i>
+        </p>
+    </p>
+</div>
+<div class="fcolumn">
+<h2 class="columtop">Company</h2>
+    <p class="fcol2">
+        <a href="/index/">Home</a>
+        <a href="#">About</a>
+        <a href="#">View Certificate</a>
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms & Condition</a>
+    </p>
+</div>
+<div class="fcolumn">
+    <h2 class="columtop">We Accept</h2>
+    <i class="fa-solid fa-mobile"></i> <a href="#">Mobile banking</a>
+</div>
+
+</footer>
+
+
+
+</body>
+</html>

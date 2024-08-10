@@ -5,6 +5,8 @@ from .import views
 urlpatterns = [
     path('home/', views.home, name="home"),
     path('index/', views.index, name="home"),
+    path('view-certificate/', views.viewcertificate, name="home"),
+    
 ]
 
 if settings.DEBUG:

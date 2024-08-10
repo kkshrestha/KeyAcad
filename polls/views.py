@@ -6,4 +6,9 @@ def home(request):
 
 def index(request):
     return render(request, 'my_app/index.html')
+
+def viewcertificate(request):
+    return render(request, 'my_app/viewcertificate.html')
+
+
 # Create your views here.
