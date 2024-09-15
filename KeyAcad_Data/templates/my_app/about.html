@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'my_app/img/keyacad-xlogo1.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'my_app/css/style.css' %}"> 
+    <script src="{% static 'my_app/js/keyac_all.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About-us</title>
+</head>
+<body>
+    {% block body %}
+    <header>
+        <!-- <nav id="logregister">
+            <a href="#">LOGIN</a>
+            <a href="#">REGISTER</a>
+        </nav> -->
+        <h6>
+            <img src="{% static 'my_app/img/keyacad-logo1.png' %}"  alt="loading"id="getlogo">
+        </h6>
+        
+        <nav class="navita">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <span id="all_c">All Course <i class="fa-solid fa-caret-down"></i></span>
+                <div class="dropdown-content">
+                    <ul>
+                    <li></li>
+                    <li></li>
+                        {% for course in courses %}
+                            <li><a href="{% url 'course_detail' slug=course.slug %}">{{ course.title }}</a></li>
+                        {% empty %}
+                            <li>No courses available</li>
+                        {% endfor %}
+                        <li></li>
+                    </ul>
+                </div>
+              </div>
+            <a href="#">About </a>
+            <a href="https://youtu.be/nBLb2LXzhYM?si=TasTeTE-kIvlNaw8" target="_blank">Tutorial</a>
+            <a href="https://youtu.be/nBLb2LXzhYM?si=TasTeTE-kIvlNaw8" target="_blank">Instruction To Apply</a>
+        </nav>
+        <nav class="navita">
+            <button class="login-register-btn" onclick="openForm()">LOGIN</button>
+            <div class="form-popup" id="myForm">
+                <form action="{% url 'login' %}" class="form-container" method="POST">
+                  {% csrf_token %}
+                  <h1>Login</h1>
+              
+                  <label for="user"><b>Username</b></label>
+                  <input type="text" placeholder="Enter username" name="username" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+              
+                  <button type="submit" class="btn">Login</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  <p class="messge">
+                  {% if messages %}
+                  <ul>
+                      {% for message in messages %}
+                      <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+                  {% endif %}
+                  </p>
+                </form>
+              </div>
+        <button id="register-btn" class="login-register-btn" onclick="redirectToRegister()">REGISTER</button>
+        <a href="/view-certificate/"><button class="Vcertifi">View Certificate</button></a>
+        </nav>
+    </header>
+<div class="our_cont">
+    
+    <div class="about-img">
+
+    </div>
+<h1>Our Story</h1>
+<h2>KEYACAD</h2>
+Welcome to KEYACAD, where education meets innovation! Founded with a vision to bridge the gap between academic knowledge and real-world applications, we are committed to empowering individuals to thrive in today’s rapidly evolving technological landscape.
+
+At KEYACAD, we believe in holistic learning that goes beyond textbooks. Our mission is to provide a dynamic and engaging educational experience that equips learners with the technical expertise, problem-solving abilities, and soft skills essential for career success. Whether you’re a student taking your first steps into the world of technology or a professional looking to enhance your skills, KEYACAD has a program tailored for you. <br><br>
+<h2>Our Values</h2><br>
+   <b> >> </b> Excellence: We strive for the highest standards in all that we do, from curriculum design to student outcomes.<br>
+   <b> >> </b> Innovation: We stay ahead of industry trends, incorporating the latest technologies and practices into our courses.<br>
+   <b> >> </b> Student-Centered Learning: Every learner is unique, and we provide personalized support to help each student reach their full potential.<br>
+   <b> >> </b> Integrity: Honesty, transparency, and ethical practices are at the core of how we operate.<br>
+   <h2> Our Approach</h2><br>
+
+We combine hands-on learning with theoretical knowledge, ensuring students have a balanced and well-rounded education. Our faculty comprises industry experts and experienced educators who bring practical insights to the classroom, enhancing the learning experience. <br><br>
+<b>Why KEYACAD?</b><br><br>
+
+<b> >> </b> Industry-Relevant Programs: We offer a wide range of courses in technology, engineering, and professional development, designed to meet the demands of today’s job market.<br>
+<b> >> </b> State-of-the-Art Facilities: Our modern labs, tools, and resources provide an immersive learning environment.<br>
+<b> >> </b> Flexible Learning Options: From online courses to in-person training, we offer flexibility to accommodate diverse learning needs.<br>
+<b> >> </b> Career Support: Our graduates benefit from a robust career services department, offering job placement assistance, internships, and mentorship opportunities.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="fcolumn">
+    <h6>
+        <img src="{% static 'my_app/img/keyacad-flogo1.png' %}" href="" alt="loading" id="fgetlogo">
+    </h6>
+    <h2 class="quick">
+        Quick Contact
+    </h2>
+    <p id="fcol">
+        <i class="fa-solid fa-square-phone"></i> 9803023776 <br><br>
+        <i class="fa-solid fa-map-location-dot"></i> Chabahil kathmandu, Nepal <br><br>
+        <i class="fa-solid fa-square-envelope"></i> Krishnakumarshresthaa@gmail. <br><br>
+        <p id="ficons">
+        <i class="fa-brands fa-square-facebook"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-square-youtube"></i><i class="fa-brands fa-square-twitter"></i>
+        </p>
+    </p>
+</div>
+<div class="fcolumn">
+<h2 class="columtop">Company</h2>
+    <p class="fcol2">
+        <a href="/">Home</a>
+        <a href="/about_us/">About</a>
+        <a href="/view-certificate/">View Certificate</a>
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms & Condition</a>
+    </p>
+</div>
+<div class="fcolumn">
+    <h2 class="columtop">We Accept</h2>
+    <i class="fa-solid fa-mobile"></i> <a href="#">Mobile banking</a>
+</div>
+
+</footer>
+<script>
+    function redirectToRegister() {
+      window.location.href = "{% url 'register' %}";
+    }
+  </script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'my_app/img/keyacad-xlogo1.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'my_app/css/style.css' %}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="{% static 'my_app/js/keyac_all.js' %}" defer></script>
+    <title>Register</title>
+</head>
+<body>
+    {% block body %}
+    <header>
+        <h6>
+            <img src="{% static 'my_app/img/keyacad-logo1.png' %}"  alt="loading"id="getlogo">
+        </h6>
+        
+        <nav class="navita">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <span id="all_c">All Course <i class="fa-solid fa-caret-down"></i></span>
+                <div class="dropdown-content">
+                    <ul>
+                    <li></li>
+                    <li></li>
+                        {% for course in courses %}
+                            <li><a href="{% url 'course_detail' slug=course.slug %}">{{ course.title }}</a></li>
+                        {% empty %}
+                            <li>No courses available</li>
+                        {% endfor %}
+                        <li></li>
+                    </ul>
+                </div>
+              </div>
+            <a href="/about_us/">About </a>
+            <a href="https://youtu.be/nBLb2LXzhYM?si=TasTeTE-kIvlNaw8" target="_blank">Tutorial</a>
+            <a href="https://youtu.be/nBLb2LXzhYM?si=TasTeTE-kIvlNaw8" target="_blank">Instruction To Apply</a>
+            </nav>
+            <nav class="navita">
+                <button class="login-register-btn" onclick="openForm()">LOGIN</button>
+                <div class="form-popup" id="myForm">
+                    <form action="{% url 'login' %}" class="form-container" method="POST">
+                    {% csrf_token %}
+                    <h1>Login</h1>
+                
+                    <label for="user"><b>Username</b></label>
+                    <input type="text" placeholder="Enter username" name="username" required>
+                
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  </form>
+                </div>
+                <a href="/view-certificate/"><button class="Vcertifi">View Certificate</button></a>
+                </nav>
+    </header>
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label for="username">Username</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="username" name="username" placeholder="Choose a username.."  required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="col-75">
+                    <input type="phone" id="phone" name="phone" placeholder="Your phone number.." required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" placeholder="Your email.." required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label for="password">Create Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="password" name="password" placeholder="Create a password.." required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password.." required>
+                </div>
+            </div>
+            
+            <div class="row">
+                <input type="submit" value="Register">
+            </div>
+            <p class="messge">
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+            </p>
+        </form>
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="fcolumn">
+    <h6>
+        <img src="{% static 'my_app/img/keyacad-flogo1.png' %}" href="" alt="loading" id="fgetlogo">
+    </h6>
+    <h2 class="quick">
+        Quick Contact
+    </h2>
+    <p id="fcol">
+        <i class="fa-solid fa-square-phone"></i> 9803023776 <br><br>
+        <i class="fa-solid fa-map-location-dot"></i> Chabahil kathmandu, Nepal <br><br>
+        <i class="fa-solid fa-square-envelope"></i> Krishnakumarshresthaa@gmail. <br><br>
+        <p id="ficons">
+        <i class="fa-brands fa-square-facebook"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-square-youtube"></i><i class="fa-brands fa-square-twitter"></i>
+        </p>
+    </p>
+</div>
+<div class="fcolumn">
+<h2 class="columtop">Company</h2>
+    <p class="fcol2">
+        <a href="/">Home</a>
+        <a href="/about_us/">About</a>
+        <a href="/view-certificate/">View Certificate</a>
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms & Condition</a>
+    </p>
+</div>
+<div class="fcolumn">
+    <h2 class="columtop">We Accept</h2>
+    <i class="fa-solid fa-mobile"></i> <a href="#">Mobile banking</a>
+</div>
+
+</footer>
+
+
+
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      var inputs = this.querySelectorAll('input[required], textarea[required]');
+      var valid = true;
+      inputs.forEach(function(input) {
+        if (!input.value.trim()) {
+          valid = false;
+          input.style.borderColor = 'red'; // Highlight empty fields
+        } else {
+          input.style.borderColor = '#ccc'; // Reset border color
+        }
+      });
+  
+      if (!valid) {
+        event.preventDefault(); // Prevent form submission if any field is empty
+        alert('Please fill out all required fields.');
+      }
+    });
+  </script>
+  
+{% endblock %}
+
+
+</body>
+</html>

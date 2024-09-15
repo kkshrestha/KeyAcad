@@ -1,0 +1,378 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  }
+  body{
+     background-color: rgb(246, 246, 246);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      
+  }
+  header{
+      position:fixed;
+      background-color: rgba(204, 201, 201, 0.679);
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 10px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+  }
+  .navita{
+      margin-right: 3%;
+  }
+  .navita a{
+    color:#073368;
+    text-decoration: none;
+      padding: 10px 20px;
+      width: 80%;
+      font-weight: bold;
+  }
+  .navita a:hover{
+      box-shadow: 0px 2px 10px 5px rgba(52, 50, 50, 0.219);
+  }
+  
+/*  */
+#logregister{
+    margin-left: 10%;
+    
+    
+}
+#logregister a{
+    color: white;
+    padding: 0.5%;
+    margin-left:0.5% ;
+    background: linear-gradient(to right,red,blue);
+    text-decoration: none;
+}
+#getlogo{
+    height: 2%;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 20%;
+}
+#getlogo:hover{
+    transform: scale(1.2);
+}
+.btn{
+   height: 36px;
+   width: 80px;
+   margin-left: 5px;
+   overflow: hidden;
+   cursor: pointer;
+   color: white;
+   background: linear-gradient(to left, darkblue, darkred);
+   border: none;
+   transition: transform 0.3s;
+}
+.btn:hover{
+    transform:scale(1.16);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    color: whitesmoke;
+    display: none;
+    position: absolute;
+    background-color:#073368b7;
+    text-align: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 26px;
+    z-index: 99;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    width: 300px;
+    
+  }
+  .dropdown-content p{
+    padding-top: 10px;
+    color:whitesmoke;
+  }
+  .dropdown-content p:hover{
+    color:#01b3ef;
+  }
+
+  .Vcertifi{
+    height: 36px;
+    width: 100px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    background: rgba(2, 2, 154, 0.664);
+    border: none;
+    transition: 0.3s;
+
+  }
+  .Vcertifi:hover{
+    background: rgba(3, 3, 136, 0.96);
+  }
+/* ----------------------heading styles---css---------> */
+
+
+.row1{
+  height: 550px;
+  width: 100%;
+  margin-top: 120px;
+}
+
+  .column1 {
+    padding-top:20px;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+}
+.column2 {
+  padding-top:20px;
+  float: left;
+  width: 50%;
+  height: 70%;
+  background-image: url('/static/my_app/img/landing-image.png');
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.tagline {
+  padding-top: 30px;
+  color: #01b3ef;
+  font-size: 50px;
+  overflow: hidden; 
+  white-space: nowrap; 
+  animation: reveal 6s steps(10) infinite forwards; 
+}
+
+@keyframes reveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+#Paragraph-landing{
+  padding-top: 10px;
+  font-weight: bold;
+  color: #01427a;
+  font-size: 18px;
+}
+.column1-btn{
+  border-radius: 7px;
+  margin-top: 20px;
+  height: 36px;
+    width: 100px;
+    margin-left: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+    background: #235391;
+    border: none;
+    transition: 0.3s;
+
+  }
+  .column1-btn:hover{
+    background: rgba(3, 3, 136, 0.96);
+  }
+.row2{
+  padding: 10px 20px;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e0e1e17c;
+}
+.Explore-cours{
+  color:#01427a;
+  
+}
+#explore-cors-p{
+  color:#01b3ef;
+}
+.row3{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  height: 330px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.courses{
+  box-shadow: 0px 2px 5px 5px #01419028;
+  overflow: hidden;
+  border-radius: 5px;
+  height: 100%;
+  border: 2px solid #01b3ef90;
+  width: 19%;
+  background-color:#01b3ef90;
+}
+.images-courses{
+  height: 190px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.9s ease;
+}
+.images-courses:hover{
+  transform: scaleX(1.2);
+}
+.courses{
+  justify-content: center;
+}
+.course-name{
+  font-size: 26px;
+  text-align: center;
+}
+
+.row3 .courses p{
+  cursor: pointer;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: auto;
+  padding: 3px 10px;
+  height: 30px;
+  width: 100px;
+  border: 2px solid #01427a;
+  text-align: center;
+}
+.row3 .courses p:hover{
+  background-color: #01b3efcf;
+  color: white;
+  border: 2px solid #014290;
+}
+/* ------------footer css-------------- */
+footer{
+  background: linear-gradient(to top,#014190,#60a3e2db),url('/static/my_app/img/footerimage.jpeg');
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  height: 330px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+
+}
+.fcolumn{
+  width: 30%;
+  height: 100%;
+  margin-left: 5.4%;
+  color:white;
+  text-align: left;
+
+  
+}
+.quick{
+  margin: 10px;
+  margin-left: 0px;
+  font-size: 30px;
+
+}
+#fcol{
+  font-size: 18px;
+  text-align: left;
+  margin-left: 1px;
+}
+#fcol i{
+  margin-right: 8px;
+  font-size: 20px;
+}
+#ficons i{
+  margin-right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+#ficons i:hover{
+  transform: scale(1.8);
+  color: #01b3ef;
+}
+
+#fgetlogo{
+  height: 2%;
+  width: 150px;
+  cursor: pointer;
+}
+
+.columtop{
+  margin-top: 20px;
+  font-size: 30px;
+}
+.fcol2 a{
+  text-align: left;
+  font-size: 20px;
+  padding: 10px 2px;
+  text-decoration: none;
+  color: #ffff;
+  display: block;
+}
+.fcol2 a:hover{
+  text-decoration: solid #ffff underline;
+  color: blue;
+}
+
+/* -----------------------view certificate---------------- */
+.viewcerti{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(to top,#014190,#c3d9ef62),url('/static/my_app/img/view-certificate.png');
+  height: 600px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+
+}
+
+.checkcertificate{
+  height: 600px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background-color: #ffff;
+  box-shadow: 0px 2px 5px 5px #01419028;
+}
+.checkcertificate h1{
+  padding-top: 100px;
+  margin-left: 300px;
+  margin-top: 100px;
+  color: #01b3ef;
+}
+
+.insertid{
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  width: 70%;
+}
+
+#studentID{
+  font-size: 18px;
+  height: 70px;
+  width: 70%;
+  border: 2px solid #01b3ef;
+}
+
+/* --test-- */
+.our_cont{
+margin-top: 100px; 
+width: 70%;
+margin-left: 10px;
+}
+
+.our_cont h1{
+  color:blue;
+}

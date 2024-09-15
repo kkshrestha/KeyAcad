@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" type="x-icon" href="{% static 'my_app/img/keyacad-xlogo1.png' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <script src="{% static 'my_app/js/keyac_all.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'my_app/css/style.css' %}">    <!-- <script src="script.js"></script> -->
+</head>
+<body>
+    {% block body %}
+    <header>
+        <h6 href="test">
+            <img src="{% static 'my_app/img/keyacad-logo1.png' %}" href="" alt="loading"id="getlogo">
+        </h6>
+        
+        <nav class="navita">
+            <a href="/">Home</a>
+           <div class="dropdown">
+                <span id="all_c">All Course <i class="fa-solid fa-caret-down"></i></span>
+                <div class="dropdown-content">
+                    <ul>
+                    <li></li>
+                    <li></li>
+                        {% for course in courses %}
+                            <li><a href="{% url 'course_detail' slug=course.slug %}">{{ course.title }}</a></li>
+                        {% empty %}
+                            <li>No courses available</li>
+                        {% endfor %}
+                        <li></li>
+                    </ul>
+                </div>
+              </div>
+            <a href="/about_us/">About </a>
+            <a href="https://youtu.be/nBLb2LXzhYM?si=TasTeTE-kIvlNaw8" target="_blank">Tutorial</a>
+            <a href="https://youtu.be/nBLb2LXzhYM?si=TasTeTE-kIvlNaw8" target="_blank">Instruction To Apply</a>
+            </nav>
+        <nav class="navita">
+            <button class="login-register-btn" onclick="openForm()">LOGIN</button>
+            <div class="form-popup" id="myForm">
+              <form action="{% url 'login' %}" class="form-container" method="POST">
+                {% csrf_token %}
+                <h1>Login</h1>
+            
+                <label for="user"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" name="username" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <p class="messge">
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                </p>
+              </form>
+            </div>
+        <button id="register-btn" class="login-register-btn" onclick="redirectToRegister()">REGISTER</button>
+        <a href="/view-certificate/"><button class="Vcertifi">View Certificate</button></a>
+        </nav>
+    </header>
+<div class="row1">
+<div class="column1">
+    <h1 class="tagline">Build your tech path,<br> Reach your career goals!</h1>
+    <p id="Paragraph-landing">Welcome to KEYACAD, a premier educational institute dedicated to shaping the future of learners in the fields of technology and professional development. At KEYACAD, we offer a meticulously designed curriculum that integrates cutting-edge industry practices with academic rigor, ensuring our students are equipped with the skills and knowledge demanded by today’s competitive job market. Our programs are tailored to meet the needs of aspiring professionals, from foundational courses in computer science and engineering to advanced training in emerging technologies. With state-of-the-art facilities, experienced instructors, and a commitment to excellence, KEYACAD is your partner in achieving your educational and career goals. Join us and transform your potential into success.</p>
+</div>
+<div class="column2" >
+   
+</div>
+</div>
+<!-- --------------next row-------- -->
+ <div class="row2">
+    <h1 class="Explore-cours">Explore Our Course</h1>
+    <p id="explore-cors-p">Developed by technology experts, based on learning science</p>
+ </div>
+ <div class="row3">
+    {% for course in courses %}
+        {% if course.title == "Ethical Hacking Training Course" %}
+    <div class="courses"> <img src="{% static 'my_app/img/courses1.jpeg' %}"  alt="loading" class="images-courses">
+    <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "Python Training Course" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses3.jpg' %}"  alt="loading" class="images-courses">
+    <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "Web Development Training" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses4.jpg' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+        <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "Advance Graphic Design Training" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses5.jpg' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "UI/UX Training Course" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses6.jpg ' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% endif %}
+    {% endfor %}
+ </div>
+ <div class="row3">
+    {% for course in courses %}
+        {% if course.title == "Hardware & Networking Course" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses7.webp' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "C Programming Training Course" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses2.jpg' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "Java Core Training Course" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses8.webp' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "Digital Marketing Training" %}
+    <div class="courses"><img src="{% static 'my_app/img/coureses9.jpg' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% elif course.title == "Flutter Framework Training" %}
+    <div class="courses"><img src="{% static 'my_app/img/courses10.png' %}"  alt="loading" class="images-courses">
+        <h1 class="course-name">{{ course.title }}</h1>
+    <a class="en_now" href="{% url 'course_detail' slug=course.slug %}">Enroll Now</a>
+    </div>
+        {% endif %}
+    {% endfor %}
+ </div>
+<footer>
+<div class="fcolumn">
+    <h6>
+        <img src="{% static 'my_app/img/keyacad-flogo1.png' %}" href="" alt="loading" id="fgetlogo">
+    </h6>
+    <h2 class="quick">
+        Quick Contact
+    </h2>
+    <p id="fcol">
+        <i class="fa-solid fa-square-phone"></i> 9803023776 <br><br>
+        <i class="fa-solid fa-map-location-dot"></i> Chabahil kathmandu, Nepal <br><br>
+        <i class="fa-solid fa-square-envelope"></i> Krishnakumarshresthaa@gmail. <br><br>
+        <p id="ficons">
+        <i class="fa-brands fa-square-facebook"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-square-youtube"></i><i class="fa-brands fa-square-twitter"></i>
+        </p>
+    </p>
+</div>
+<div class="fcolumn">
+<h2 class="columtop">Company</h2>
+    <p class="fcol2">
+        <a href="/">Home</a>
+        <a href="/about_us/">About</a>
+        <a href="/view-certificate/">View Certificate</a>
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Terms & Condition</a>
+    </p>
+</div>
+<div class="fcolumn">
+    <h2 class="columtop">We Accept</h2>
+    <i class="fa-solid fa-mobile"></i> <a href="#">Mobile banking</a>
+</div>
+
+</footer>
+
+
+<script>
+    function redirectToRegister() {
+      window.location.href = "{% url 'register' %}";
+    }
+  </script>
+{% endblock %}
+</body>
+</html>
